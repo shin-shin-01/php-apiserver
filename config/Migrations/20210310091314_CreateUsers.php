@@ -21,12 +21,12 @@ class CreateUsers extends AbstractMigration
             'limit' => 255,
             'null' => false,
         ]);
-        $table->addColumn('created', 'datetime', [
-            'default' => null,
+        $table->addColumn('created', 'timestamp', [
+            'default' => 'CURRENT_TIMESTAMP',
             'null' => false,
         ]);
-        $table->addColumn('modified', 'datetime', [
-            'default' => null,
+        $table->addColumn('modified', 'timestamp', [
+            'default' => 'CURRENT_TIMESTAMP',
             'null' => false,
         ]);
         $table->create();
