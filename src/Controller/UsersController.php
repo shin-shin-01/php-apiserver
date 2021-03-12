@@ -7,7 +7,7 @@ use Cake\ORM\TableRegistry;
 
 class UsersController extends AppController
 {
-    public function index()
+    public function index(): void
     {
         $users = $this->Users->find('all');
         $this->set([
@@ -16,7 +16,7 @@ class UsersController extends AppController
         ]);
     }
 
-    public function create()
+    public function create(): void
     {
         if ($this->request->is('post')) {
             $users = TableRegistry::getTableLocator()->get('Users');
