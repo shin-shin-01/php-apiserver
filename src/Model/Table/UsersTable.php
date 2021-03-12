@@ -6,7 +6,7 @@ use Cake\Validation\Validator;
 
 class UsersTable extends Table
 {
-    public function initialze(array $config)
+    public function initialze(array $config): void
     {
         echo "initialize UsersTable";
         $this->setTable('users');
