@@ -29,7 +29,7 @@ class UsersController extends AppController
             $this->set([
                 'message' => $message,
                 'user' => $user,
-                '_serialize' => ['message', 'user']
+                '_serialize' => ['message', 'user'],
             ]);
         }
     }
