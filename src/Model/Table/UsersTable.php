@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace App\Model\Table;
 
 use Cake\ORM\Table;
@@ -8,7 +10,7 @@ class UsersTable extends Table
 {
     public function initialze(array $config): void
     {
-        echo "initialize UsersTable";
+        echo 'initialize UsersTable';
         $this->setTable('users');
         $this->setEntityClass('App\Model\Entity\User');
         $this->setPrimaryKey('id');
@@ -17,8 +19,8 @@ class UsersTable extends Table
                 'Model.buildValidator' => [
                     'created' => 'new',
                     'modified' => 'always',
-                ]
-            ]
+                ],
+            ],
         ]);
     }
 
