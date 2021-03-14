@@ -6,6 +6,11 @@ namespace App\Controller\Api;
 use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
 
+/**
+ * Api/ Users Controller
+ *
+ * @property \App\Model\Table\UsersTable $Users
+ */
 class UsersController extends AppController
 {
     public function index(): void
