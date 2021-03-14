@@ -51,9 +51,6 @@ $routes->scope('/', function (RouteBuilder $builder) {
      * to use (in this case, templates/Pages/home.php)...
      */
 
-    //Json Xml
-    $builder->setExtensions(['json', 'xml']);
-
     $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
 
     /*
@@ -77,3 +74,16 @@ $routes->scope('/', function (RouteBuilder $builder) {
     $builder->fallbacks();
 });
 
+/*
+  * If you need a different set of middleware or none at all,
+  * open new scope and define routes there.
+*/
+$routes->scope('/api', ['prefix' => 'Api'], function (RouteBuilder $builder) {
+
+    $builder->setExtensions(['json']);
+
+    // Users
+    $builder->connect('/users/index', ['controller' => 'Users', 'action' => 'index'])->setMethods(['GET']);
+    $builder->connect('/users/create', ['controller' => 'Users', 'action' => 'create'])->setMethods(['POST']);
+
+});
